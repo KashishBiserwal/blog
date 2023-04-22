@@ -1,0 +1,19 @@
+.contents-page{
+    min-height: 80vh;
+
+    .all-blogs{
+        ul li{
+            margin: 1rem 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a{
+                color: #333;
+                text-decoration: none;
+            }
+        }
+    }
+}

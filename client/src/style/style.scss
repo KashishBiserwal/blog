@@ -1,0 +1,49 @@
+@import "Blog";
+@import "Header";
+@import "Footer";
+@import "LoginSignup";
+@import "Post";
+@import "Home";
+@import "Content";
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+  background-color: wheat;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.body{
+  padding: 0 20px;
+  margin-top: 2rem;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  outline: none;
+  background-color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px rgb(95, 95, 95);
+  &:active {
+      transform: translateY(5px);
+      box-shadow: 0px 0px 0px 0px rgb(95, 95, 95);
+  }
+}
