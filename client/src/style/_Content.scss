@@ -4,15 +4,20 @@
     .all-blogs{
         ul li{
             margin: 1rem 0;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid rgb(255, 255, 255);
             padding-bottom: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
             a{
-                color: #333;
+                color: rgb(41, 41, 41);
                 text-decoration: none;
+
+                :hover{
+                    cursor: pointer;
+                    color: rgb(124, 124, 124);
+                }
             }
         }
     }

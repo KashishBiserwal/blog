@@ -51,11 +51,11 @@ export const Post = () => {
             <form onSubmit={addBlogPost} className='post-form'>
                 <div className='label-input'>
                     <label for='title'>Title: </label>
-                    <input type='text' className='text-input' name='title' value={title} onChange={e => setTitle(e.target.value)} />
+                    <input type='text' className='text-input title' name='title' value={title} onChange={e => setTitle(e.target.value)} />
                 </div>
                 <div className='label-input'>
                     <label for='content'>Content: </label>
-                    <textarea type='text' className='text-input' name='content' value={content} onChange={e => setContent(e.target.value)} />
+                    <textarea type='text' className='text-input' name='content' rows='10' value={content} onChange={e => setContent(e.target.value)} />
                 </div>
                 <div className='label-input form-image'>
                     <label for='image'>Image: </label>
@@ -63,10 +63,11 @@ export const Post = () => {
                 </div>
                 <div className='label-input'>
                     <label for='password'>Password: </label>
-                    <input type='password' className='text-input' name='password' value={password} onChange={e => setPassword(e.target.value)} />
+                    <input type='password' className='text-input pass' name='password' value={password} onChange={e => setPassword(e.target.value)} />
                 </div>
                 <button type='submit' className='btn'>Post</button>
             </form>
+
         </div>
     )
 }

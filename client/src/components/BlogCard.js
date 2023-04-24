@@ -8,7 +8,7 @@ export default function BlogCard({ blog }) {
                 <img src={blog.image} alt={blog.title} />
                 <div className='content'>
                     <h2>{blog.title}</h2>
-                    <p>{blog.content}</p>
+                    <p>{blog.description}</p>
                 </div>
             </div>
         </Link>

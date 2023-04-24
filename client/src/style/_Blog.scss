@@ -32,8 +32,6 @@
 .single-blog-page{
     max-width: 90%;
     margin: auto;
-    margin-top: 5rem;
-    border: 1px solid black;
     padding: 1rem;
     min-height: 70vh;
     h2{
@@ -46,5 +44,22 @@
     }
     .blog-content{
         margin: 2rem 0;
+        font-size: 17px;
     }
 }
+
+pre {
+    background-color: #282c34;
+    border-left: 10px solid #abb2bf;
+    border-radius: 0 5px 5px 0;
+    color: #abb2bf;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 1.6em 0;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+  }

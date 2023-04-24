@@ -14,11 +14,13 @@ export const Content = () => {
   return (
     <div className='contents-page'>
       <div className='all-blogs'>
+        <h1>All Blogs</h1>
+        <br />
         {blogs.map((blog) => (
           <ul>
             <li>
               <div key={blog.id}>
-                <Link to={`/blogs/${blog.id}`} className='link'><h3>{blog.title}</h3></Link>
+                <Link to={`/blogs/${blog.id}`} className='link'><h2>{blog.title}</h2></Link>
               </div>
             </li>
           </ul>

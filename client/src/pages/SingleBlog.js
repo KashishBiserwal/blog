@@ -11,11 +11,12 @@ export const SingleBlog = () => {
           setBlog(result.data);
         };
         fetchData();
-      }, []);
+      }, [id]);
   return (
     <div className='single-blog-page'>
-        <h2>{blog.title}</h2>
-        <p className='blog-content'>{blog.content}</p>
+        <h1>{blog.title}</h1>
+        <p className='blog-content' dangerouslySetInnerHTML={{ __html: blog.content }}></p>
+        <p>Date: {blog.date}</p>
     </div>
   )
 }
