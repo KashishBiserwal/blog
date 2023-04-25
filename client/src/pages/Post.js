@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 export const Post = () => {
     const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
     const [content, setContent] = useState('');
     const [password, setPassword] = useState('');
     const [image, setImage] = useState(null);
@@ -35,12 +36,27 @@ export const Post = () => {
         }
     }
 
+    function padTo2Digits(num) {
+        return num.toString().padStart(2, '0');
+    }
+
+    function formatDate(date) {
+        return [
+            padTo2Digits(date.getDate()),
+            padTo2Digits(date.getMonth() + 1),
+            date.getFullYear(),
+        ].join('-');
+    }
+
     const addBlogPost = (e) => {
         e.preventDefault();
         const blog = {
             title: title,
+            description: description,
             content: content,
-            image: image
+            image: image,
+            date: formatDate(new Date()),
+            author: 'Kashish'
         }
         postBlog(blog);
     }
@@ -52,6 +68,10 @@ export const Post = () => {
                 <div className='label-input'>
                     <label for='title'>Title: </label>
                     <input type='text' className='text-input title' name='title' value={title} onChange={e => setTitle(e.target.value)} />
+                </div>
+                <div className='label-input'>
+                    <label for='description'>Description: </label>
+                    <input type='text' className='text-input description' name='description' value={description} onChange={e => setDescription(e.target.value)} />
                 </div>
                 <div className='label-input'>
                     <label for='content'>Content: </label>

@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className='outer'>
       <div className='inner'>
-        <Link to='/' className='link logo'><h1>KashishBlogs</h1></Link>
+        <Link to='/' className='link logo'><h2>Kashish</h2></Link>
         <div className='header-right'>
           <SearchBar />
           <div className='header-buttons'>

@@ -8,10 +8,14 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String title;
+    @Column(length = 500)
+    private String description;
     @Column(length = 20000)
     private String content;
     @Column(length = 100000)
     private String image;
+    private String date;
+    private String author;
 
     public Blog() {
     }
@@ -22,17 +26,14 @@ public class Blog {
         this.content = content;
     }
 
-    public Blog(int id, String title, String content, String image) {
+    public Blog(int id, String title, String description, String content, String image, String date, String author) {
         this.id = id;
         this.title = title;
+        this.description = description;
         this.content = content;
         this.image = image;
-    }
-
-    public Blog(String title, String content, String image) {
-        this.title = title;
-        this.content = content;
-        this.image = image;
+        this.date = date;
+        this.author = author;
     }
 
     public String getImage() {
@@ -65,5 +66,29 @@ public class Blog {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }

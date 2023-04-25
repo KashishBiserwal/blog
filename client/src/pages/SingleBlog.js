@@ -14,9 +14,12 @@ export const SingleBlog = () => {
       }, [id]);
   return (
     <div className='single-blog-page'>
+        <img src={blog.image} alt='blog.title' className='img' />
+        <div className='details'>
+          <p>Last Updated: {blog.date}</p>
+        </div>
         <h1>{blog.title}</h1>
         <p className='blog-content' dangerouslySetInnerHTML={{ __html: blog.content }}></p>
-        <p>Date: {blog.date}</p>
     </div>
   )
 }

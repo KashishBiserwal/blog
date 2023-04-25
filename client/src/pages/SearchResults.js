@@ -1,18 +1,22 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function SearchResults() {
   const location = useLocation();
-  const results = location.state.results;
+  const blogs = location.state.results;
 
   return (
-    <div>
+    <div className='all-blogs search-results'>
       <h1>Search Results</h1>
-      {results?.map((result) => (
-        <div key={result.id}>
-          <h2>{result.title}</h2>
-          <p>{result.content}</p>
-        </div>
-      ))}
+      <br />
+      {blogs.map((blog) => (
+          <ul>
+            <li>
+              <div key={blog.id}>
+                <Link to={`/blogs/${blog.id}`} className='link'><h2>{blog.title}</h2></Link>
+              </div>
+            </li>
+          </ul>
+        ))}
     </div>
   );
 }

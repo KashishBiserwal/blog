@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import BlogCard from '../components/BlogCard';
 
-const Home = (props) => {
+const Home = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -15,6 +15,7 @@ const Home = (props) => {
 
   return (
     <div className='home'>
+      <h1>Blogs ({Object.keys(blogs).length})</h1>
       <div className='all-blogs'>
         {blogs.map((blog) => (
           <BlogCard blog={blog}/>

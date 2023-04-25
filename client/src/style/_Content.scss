@@ -4,7 +4,7 @@
     .all-blogs{
         ul li{
             margin: 1rem 0;
-            border-bottom: 1px solid rgb(255, 255, 255);
+            border-bottom: 1px dashed rgb(97, 97, 97);
             padding-bottom: 1rem;
             display: flex;
             justify-content: space-between;
@@ -12,11 +12,10 @@
 
             a{
                 color: rgb(41, 41, 41);
-                text-decoration: none;
 
                 :hover{
                     cursor: pointer;
-                    color: rgb(124, 124, 124);
+                    color: rgb(0, 0, 0);
                 }
             }
         }

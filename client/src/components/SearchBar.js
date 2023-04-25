@@ -28,10 +28,12 @@ function SearchBar() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className='searchbar'>
-            <input type="text" value={query} onChange={handleInputChange} />
-            <button type="submit"><span className='search-icon'>{query?.length > 0 ? <FontAwesomeIcon icon={faMagnifyingGlass} beat/>: <FontAwesomeIcon icon={faMagnifyingGlass}/>}</span></button>
-        </form>
+        <div class="search-container">
+            <form onSubmit={handleSubmit} method="get">
+                <input class="search expandright" id="searchright" type="text" value={query} onChange={handleInputChange} placeholder="Search" />
+                    <label class="search-btn searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+            </form>
+        </div>
     );
 }
 

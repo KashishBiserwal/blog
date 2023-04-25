@@ -1,9 +1,17 @@
+.outer{
+    box-shadow: 0 4px 5px -3px rgba(0,0,0,.3);
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
 
 .inner{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    
 
     .header-right{
         display: flex;
@@ -12,14 +20,15 @@
     }
 
     .header-buttons{
-        margin-left:40px;
+        margin-left:20px;
         display: flex;
 
         .button{
             padding: 5px 10px;
             cursor: pointer;  
             :hover{
-                color: #ff7070;
+                color: #3b3b3b;
+				border-bottom: 1px solid #3b3b3b;
             } 
             
             h4{
@@ -33,19 +42,92 @@
     font-size: 17px;
 }
 
-.searchbar{
-    input{
-        border: none;
-        border-bottom: 1px solid black;
-        outline: none;
-        font-size: 16px;
-        background-color: transparent;
-        padding: 5px;
-        width: 170px;
-    }
-    button{
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
+.search-btn {
+	display: inline-block;
+	margin: 4px 2px;
+    color: black;
+	font-size: 16px;
+	padding-left: 32px;
+	padding-right: 32px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.search-btn:hover {
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	color: rgb(0, 0, 0);
+}
+
+.search-container {
+	position: relative;
+	display: inline-block;
+	margin: 4px 2px;
+	height: 40px;
+	width: 40px;
+	vertical-align: bottom;
+}
+
+.mglass {
+	display: inline-block;
+	pointer-events: none;
+	transform: rotate(-45deg);
+}
+
+.searchbutton {
+	position: absolute;
+	font-size: 30px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.search:focus + .searchbutton {
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	background-color: white;
+	color: black;
+}
+
+.search {
+	position: absolute;
+	left: 39px; 
+    background-color: transparent;
+	border: none;
+    border-bottom: 2px solid black;
+	outline: none;
+	padding: 0;
+	width: 0;
+	height: 100%;
+	z-index: 10;
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+}
+
+.search:focus {
+	width: 200px;
+	padding: 0 10px 0 0;
+}
+
+.expandright {
+	left: auto;
+	right: 39px; 
+}
+
+.expandright:focus {
+	padding: 0 0 0 16px;
 }
