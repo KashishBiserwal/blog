@@ -1,12 +1,11 @@
 .all-blogs {
   margin: 0 3rem;
-  max-width: 75%;
+  max-width: 70%;
 }
 
 .blog-card {
   margin: 2rem 0;
   background-color: white;
-  display: flex;
   transition: all 0.3s;
   position: relative;
   cursor: pointer;
@@ -17,14 +16,8 @@
     font-size: 27px;
   }
   .content {
-    padding: 1rem;
+    padding: 2.5rem;
     width: 100%;
-  }
-  img {
-    width: 40%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 5px 0 0 5px;
   }
   .date {
     position: absolute;
@@ -37,7 +30,7 @@
   max-width: 65%;
   margin: auto;
   padding: 1rem;
-  min-height: 70vh;
+  min-height: 90vh;
   h2 {
     margin: 2rem 0;
   }
@@ -75,5 +68,5 @@ pre {
 
 
 .search-results{
-  min-height: 70vh;
+  min-height: 90vh;
 }

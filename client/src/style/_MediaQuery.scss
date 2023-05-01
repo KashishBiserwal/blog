@@ -1,0 +1,43 @@
+@media only screen and (max-width: 768px) {
+  .all-blogs {
+    margin: 0;
+    max-width: 100%;
+  }
+  .content {
+    padding: 1rem;
+  }
+  .single-blog-page {
+    max-width: 100%;
+    padding: 0.5rem;
+    img {
+      height: auto;
+    }
+  }
+  .bars {
+    display: block;
+  }
+
+  .header-right{
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    top: -15rem;
+    padding: 2rem;
+    .header-buttons{
+        flex-direction: column;
+    }
+    justify-content: right;
+
+  }
+  .active {
+    top: 4rem;
+    left: 0;
+    background-color: white;
+    z-index: 2;
+    display: block;
+    box-shadow: 0 4px 5px -3px rgba(0,0,0,.3);
+  }
+  .inner .header-buttons .button {
+    padding: 10px;
+  }
+}

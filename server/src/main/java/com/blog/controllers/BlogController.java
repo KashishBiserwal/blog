@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -18,16 +19,16 @@ public class BlogController {
     private BlogService blogService;
 
     @GetMapping("/api/blogs")
-    public ResponseEntity<List<Blog>> getBlogs(){
+    public ResponseEntity<List<Blog>> getBlogs() {
         List<Blog> list = this.blogService.getAllBlogs();
-        if(list.size() < 1) return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        if (list.size() < 1) return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         return ResponseEntity.of(Optional.of(list));
     }
 
     @GetMapping("/api/blogs/{id}")
     public ResponseEntity<Blog> getBlogById(@PathVariable int id) {
         Blog blog = this.blogService.getBlogById(id);
-        if(blog == null) {
+        if (blog == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         return ResponseEntity.ok().body(blog);
@@ -37,11 +38,11 @@ public class BlogController {
     public ResponseEntity<Blog> addBlog(@RequestBody Blog blog, @RequestHeader("Authorization") String password) {
         Blog b;
         String envPassword = System.getenv("ADMIN_PASS");
-        if(password.equals(envPassword)){
-            try{
+        if (password.equals(envPassword)) {
+            try {
                 b = this.blogService.addBlog(blog);
                 return ResponseEntity.status(HttpStatus.CREATED).body(b);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
             }
@@ -50,18 +51,14 @@ public class BlogController {
     }
 
     @DeleteMapping("/api/blogs/{id}")
-    public ResponseEntity<Void> deleteBlog(@PathVariable int id, @RequestHeader("Authorization") String password){
-        String envPassword = System.getenv("ADMIN_PASS");
-        if(password.equals(envPassword)){
-            try {
-                this.blogService.deleteBlog(id);
-                return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-            }catch (Exception e){
-                e.printStackTrace();
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-            }
+    public ResponseEntity<Void> deleteBlog(@PathVariable int id) {
+        try {
+            this.blogService.deleteBlog(id);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
     }
 
     @GetMapping("/api/search/blogs")
@@ -74,4 +71,17 @@ public class BlogController {
         }
         return ResponseEntity.of(Optional.of(list));
     }
+
+    @PutMapping("/api/blogs/{id}")
+    public ResponseEntity<Blog> updateBlog(@PathVariable int id, @RequestBody Blog blog) {
+        try {
+            this.blogService.updateBlog(id, blog);
+            return ResponseEntity.status(HttpStatus.CREATED).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+
 }

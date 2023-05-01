@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 function SearchBar() {
     const [query, setQuery] = useState(null);
@@ -31,7 +29,7 @@ function SearchBar() {
         <div class="search-container">
             <form onSubmit={handleSubmit} method="get">
                 <input class="search expandright" id="searchright" type="text" value={query} onChange={handleInputChange} placeholder="Search" />
-                    <label class="search-btn searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+                <label class="search-btn searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
             </form>
         </div>
     );

@@ -29,4 +29,7 @@ public class BlogService {
     public void deleteBlog(int id){
         blogRepository.deleteById(id);
     }
+    public void updateBlog(int id, Blog blog){
+        blogRepository.updateById(id, blog);
+    }
 }

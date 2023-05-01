@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <h1>Blogs ({Object.keys(blogs).length})</h1>
+      <h3>Blogs ({Object.keys(blogs).length})</h3>
       <div className='all-blogs'>
         {blogs.map((blog) => (
           <BlogCard blog={blog}/>

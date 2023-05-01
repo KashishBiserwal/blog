@@ -2,10 +2,10 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
-const Layout = () => {
+const Layout = ({authenticated}) => {
   return (
     <div className='all'>
-      <Header />
+      <Header authenticated={authenticated}/>
       <div className="body">
         <Outlet />
       </div>

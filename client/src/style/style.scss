@@ -5,21 +5,32 @@
 @import "Post";
 @import "Home";
 @import "Content";
+@import "About";
+@import "MediaQuery";
 
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+.icon{
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+}
+.icons{
+  display: flex;
+}
 body {
-  font-family: 'Inconsolata', monospace;
+  font-family: 'ui-sans-serif','system-ui','-apple-system';
   background-color: rgb(244, 244, 244);
   max-width: 1300px;
   margin: 0 auto;
+}
+h1,h2,h3,h4{
+  font-family: 'Plus Jakarta Sans';
 }
 .body{
   padding: 0 20px;
