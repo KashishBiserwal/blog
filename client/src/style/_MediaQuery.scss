@@ -40,4 +40,22 @@
   .inner .header-buttons .button {
     padding: 10px;
   }
+  .inner .header-right{
+    display: grid;
+    text-align: center;
+    justify-content: right;
+  }
+  .searchbutton{
+    left: 3rem;
+  }
+  .about-page{
+    margin: 0 auto;
+  }
+  .details{
+    text-align: center;
+  }
+  .contact{
+    justify-content: center;
+    gap: 2.5rem;
+  }
 }

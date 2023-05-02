@@ -20,14 +20,15 @@
   padding: 10px;
   cursor: pointer;
 }
+.purple{
+  color: rgb(86, 4, 186);
+}
 .icons{
   display: flex;
 }
 body {
   font-family: 'ui-sans-serif','system-ui','-apple-system';
   background-color: rgb(244, 244, 244);
-  max-width: 1300px;
-  margin: 0 auto;
 }
 h1,h2,h3,h4{
   font-family: 'Plus Jakarta Sans';
@@ -35,6 +36,8 @@ h1,h2,h3,h4{
 .body{
   padding: 0 20px;
   margin-top: 2rem;
+  max-width: 1300px;
+	margin: 0 auto;
 }
 
 .link{

@@ -7,9 +7,10 @@ import { HiOutlinePencilAlt } from 'react-icons/hi';
 export const SingleBlog = ({ authenticated }) => {
   const [blog, setBlog] = useState({});
   const { id } = useParams();
+  const baseUrl = process.env.REACT_APP_URL;
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(`http://localhost:8080/api/blogs/${id}`);
+      const result = await axios.get(`${baseUrl}/api/blogs/${id}`);
       setBlog(result.data);
     };
     fetchData();

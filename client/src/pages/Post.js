@@ -4,8 +4,8 @@ export const Post = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [content, setContent] = useState('');
-    const [password, setPassword] = useState('');
     const [image, setImage] = useState(null);
+    const baseUrl = process.env.REACT_APP_URL;
 
     const handleImageChange = (event) => {
         const selectedfile = event.target.files;
@@ -22,11 +22,10 @@ export const Post = () => {
 
     async function postBlog(blog) {
         try {
-            await fetch('http://localhost:8080/api/blogs', {
+            await fetch(`${baseUrl}/api/blogs`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `${password}`
                 },
                 body: JSON.stringify(blog)
             });
@@ -80,10 +79,6 @@ export const Post = () => {
                 <div className='label-input form-image'>
                     <label for='image'>Image: </label>
                     <input type='file' accept="image/*" name='image' className='blog-image' onChange={handleImageChange} />
-                </div>
-                <div className='label-input'>
-                    <label for='password'>Password: </label>
-                    <input type='password' className='text-input pass' name='password' value={password} onChange={e => setPassword(e.target.value)} />
                 </div>
                 <button type='submit' className='btn'>Post</button>
             </form>

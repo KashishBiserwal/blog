@@ -4,9 +4,10 @@ import { FaTrash } from 'react-icons/fa';
 
 export const Delete = () => {
     const { id } = useParams();
+    const baseUrl = process.env.REACT_APP_URL
     async function handleDelete() {
         try {
-            await fetch(`http://localhost:8080/api/blogs/${id}`, {
+            await fetch(`${baseUrl}/api/blogs/${id}`, {
                 method: 'DELETE',
             });
             alert('Blog deleted!');

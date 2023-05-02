@@ -1,5 +1,5 @@
 .about{
-    min-height: 90vh;
+    min-height: 70vh;
 }
 .about-page{
     display: grid;
@@ -9,16 +9,33 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .image{
-    max-width: 100px;
+    justify-content: center;
+    display: flex;
     img{
-        max-width: 200px;
+        max-width: 250px;
+        max-height: 250px;
+        border-radius: 50%;
     }
 }
 .login-btn{
     position: absolute;
-    top: 7rem;
-    right: 3rem;
+    top: 6rem;
+    right: 2rem;
     h4{
         color: rgb(86, 4, 186);
+    }
+}
+.small-font{
+    font-size: 18px;
+}
+.details{
+    line-height: 2rem;
+}
+.contact{
+    display: flex;
+    gap: 3rem;
+    a{
+        color: black;
+        font-size: 1.5rem;
     }
 }

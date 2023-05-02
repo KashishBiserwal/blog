@@ -5,11 +5,12 @@ import axios from 'axios';
 function SearchBar() {
     const [query, setQuery] = useState(null);
     const navigate = useNavigate();
+    const baseUrl = process.env.REACT_APP_URL;
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.get(`http://localhost:8080/api/search/blogs?keyword=${query}`);
+            const response = await axios.get(`${baseUrl}/api/search/blogs?keyword=${query}`);
             const data = response.data;
             navigate('/search', { state: { results: data } });
         } catch (error) {

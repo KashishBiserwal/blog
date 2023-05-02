@@ -4,10 +4,11 @@ import BlogCard from '../components/BlogCard';
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
+  const baseUrl = process.env.REACT_APP_URL;
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('http://localhost:8080/api/blogs');
+      const result = await axios.get(`${baseUrl}/api/blogs`);
       setBlogs(result.data);
     };
     fetchData();
@@ -15,7 +16,7 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <h3>Blogs ({Object.keys(blogs).length})</h3>
+      <h3 className='purple'>Blogs ({Object.keys(blogs).length})</h3>
       <div className='all-blogs'>
         {blogs.map((blog) => (
           <BlogCard blog={blog}/>

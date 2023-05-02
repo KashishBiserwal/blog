@@ -1,4 +1,4 @@
-$blue: rgb(86, 4, 186);
+$purple: rgb(86, 4, 186);
 .outer{
     box-shadow: 0 4px 5px -3px rgba(0,0,0,.3);
     position: sticky;
@@ -7,12 +7,14 @@ $blue: rgb(86, 4, 186);
     z-index: 1;
 }
 .inner{
-    display: flex;
+	max-width: 1300px;
+	margin: 0 auto 2rem auto;
+	display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
 	h2, h4{
-		color: $blue;
+		color: $purple;
 	}
     
 

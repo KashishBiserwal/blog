@@ -7,11 +7,12 @@ export const Update = () => {
     const [description, setDescription] = useState('');
     const [content, setContent] = useState('');
     const [image, setImage] = useState(null);
+    const baseUrl = process.env.REACT_APP_URL
 
     useEffect(() => {
         async function fetchBlog() {
             try {
-                const response = await fetch(`http://localhost:8080/api/blogs/${id}`);
+                const response = await fetch(`${baseUrl}/api/blogs/${id}`);
                 const blogData = await response.json();
                 setTitle(blogData.title);
                 setDescription(blogData.description);
@@ -39,7 +40,7 @@ export const Update = () => {
 
     async function updateBlog(blog) {
         try {
-            await fetch(`http://localhost:8080/api/blogs/${id}`, {
+            await fetch(`${baseUrl}/api/blogs/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
